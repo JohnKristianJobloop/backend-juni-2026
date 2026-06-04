@@ -36,7 +36,6 @@ person.Name = "John K";
 //    public string Adress{get;set;}
 //}
 
-
 //class Person(string name, int age, string adress)
 //{
 //    public string Name{get;set;} = name;
