@@ -1,6 +1,6 @@
 using core.Models;
 
-namespace core.Services.Builders;
+namespace core.Services.Extensions;
 
 
 /// <summary>
@@ -10,7 +10,7 @@ namespace core.Services.Builders;
 /// short-circuits the rest of the chain and is passed through unchanged.
 /// Start the chain with <c>new Success&lt;NewRepairForm&gt;(new NewRepairForm())</c>.
 /// </summary>
-public static class NewRepairFormResultBuilder
+public static class NewRepairFormResultExtension
 {
     private static readonly string[] ValidRepairTypes =
     [
@@ -25,6 +25,7 @@ public static class NewRepairFormResultBuilder
         "Volvo", "Peugeot", "Renault", "Citroën", "Hyundai", "Kia", "Nissan",
         "Mazda", "Subaru", "Fiat", "Seat", "Škoda", "Mitsubishi", "Tesla", "Lexus"
     ];
+
     /// <summary>
     /// Assigns an ID to the form. If no ID is provided, a new <see cref="Guid"/> is generated.
     /// </summary>
@@ -59,7 +60,7 @@ public static class NewRepairFormResultBuilder
         result is Success<NewRepairForm> success 
             ?   (!string.IsNullOrWhiteSpace(repairType) && ValidRepairTypes.Contains(repairType, StringComparer.InvariantCultureIgnoreCase))
                 ? new Success<NewRepairForm>(success.Value with {RepairType = repairType})
-                : new Error($"{repairType} is covered by this workshop")
+                : new Error($"{repairType} is not covered by this workshop")
             : result;
             
     /// <summary>
@@ -72,7 +73,7 @@ public static class NewRepairFormResultBuilder
         result is Success<NewRepairForm> success 
             ?   (!string.IsNullOrWhiteSpace(brand) && ValidCarBrands.Contains(brand, StringComparer.InvariantCultureIgnoreCase))
                 ? new Success<NewRepairForm>(success.Value with {CarModel = brand})
-                : new Error($"{brand} is covered by this workshop")
+                : new Error($"{brand} is not covered by this workshop")
             : result;
 
 }
