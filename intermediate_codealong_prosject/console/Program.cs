@@ -2,7 +2,7 @@
 using console.Services;
 using core.Models;
 using core.Repositories;
-
+// <-- så ligger det en implicit class Program{ void Main(){} } Program klassen er ofte internal. 
 var repository = new RepairRepository();
 var service = new NewRepairFormConsoleService(repository);
 
