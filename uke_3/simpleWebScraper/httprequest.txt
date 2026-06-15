@@ -1,0 +1,2 @@
+GET / (root) hos HOST(nrk.no)
+
