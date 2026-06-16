@@ -19,4 +19,7 @@ numberList.Add(6);
 foreach(var number in numberArray) Console.WriteLine(number);
 foreach(var number in numberList) Console.WriteLine(number);
 
-var multipliedList = numberList.Where(num => num % 2 == 1).Select(num => num * 2);
+//Litt repetisjon om funksjoner. 
+Func<int, bool> predicate = (x) => x % 2 == 1;
+Func<int, int> transformer = (x) => x * 2;
+var multipliedList = numberList.Where(num => predicate(num)).Select(num => transformer(num));

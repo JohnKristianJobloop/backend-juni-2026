@@ -1,0 +1,14 @@
+public static class Solution
+{
+    public static int ApplyTwice(Func<int, int> f, int x) => f(f(x));
+
+    public static Func<int, int> MakeAdder(int n) => n => n;
+
+    public static int Total(int[] numbers) => numbers.Sum();
+
+    public static string LongestWord(string[] strings) => "Hello!";
+}
+
+
+
+
