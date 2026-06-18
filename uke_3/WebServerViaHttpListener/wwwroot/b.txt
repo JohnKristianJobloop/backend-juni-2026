@@ -1,0 +1,3 @@
+B is a programming language developed at Bell Labs circa 1969 by Ken Thompson and Dennis Ritchie.
+
+B was designed for recursive, non-numeric, machine-independent applications, such as system and language software.[2] It was a typeless language, with the only data type being the underlying machine's natural memory word format, whatever that might be. Depending on the context, the word was treated either as an integer or a memory address. 
