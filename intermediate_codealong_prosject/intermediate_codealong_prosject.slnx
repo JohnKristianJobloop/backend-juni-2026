@@ -3,4 +3,5 @@
   <Project Path="core/core.csproj" />
   <Project Path="randomNumberGenerator/randomNumberGenerator.csproj" />
   <Project Path="tests/tests.csproj" />
+  <Project Path="webapi/webapi.csproj" />
 </Solution>
