@@ -1,3 +1,4 @@
+using core.Interfaces;
 using core.Models;
 
 namespace core.Repositories;
@@ -5,7 +6,7 @@ namespace core.Repositories;
 /// <summary>
 /// In-memory store for <see cref="NewRepairForm"/> instances.
 /// </summary>
-public class RepairRepository
+public class RepairRepository : IRepairRepository
 {
 
     private readonly List<NewRepairForm> _forms = [];

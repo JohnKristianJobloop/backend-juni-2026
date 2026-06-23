@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repairs</title>
+  <script src="index.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>New Repair</h1>
+
+  <form id="repairForm">
+    <label>Customer Name
+      <input name="customerName" required>
+    </label>
+    <label>Car Model
+      <input name="carModel" required>
+    </label>
+    <label>Repair Type
+      <input name="repairType" required>
+    </label>
+    <button type="submit">Add Repair</button>
+  </form>
+
+  <h2>Repairs</h2>
+  <ul id="repairList"></ul>
+
+</body>
+</html>
