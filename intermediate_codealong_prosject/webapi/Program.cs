@@ -1,6 +1,7 @@
 using core.Interfaces;
-using core.Repositories;
-using webapi.groups;
+using Microsoft.EntityFrameworkCore;
+using webapi.Context;
+using webapi.extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,8 @@ builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<IRepairRepository, RepairRepository>();
+builder.Services.AddRepairDbContext(builder.Configuration);
+//builder.Services.AddSingleton<IRepairRepository, RepairRepository>();
 
 var app = builder.Build();
 

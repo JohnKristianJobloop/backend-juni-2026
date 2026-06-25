@@ -15,7 +15,10 @@ public class RepairRepository : IRepairRepository
     /// Persists a completed repair order.
     /// </summary>
     /// <param name="form">The validated form to store.</param>
-    public void Save(NewRepairForm form) => _forms.Add(form);
+    public NewRepairForm Save(NewRepairForm form){
+        _forms.Add(form);
+        return form;
+    }
 
     /// <summary>
     /// Returns all stored repair orders as a read-only list.
